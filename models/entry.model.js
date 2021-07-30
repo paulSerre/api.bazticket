@@ -7,7 +7,7 @@ const Entry = function(entry) {
 };
 
 Entry.getAll = result => {
-    sql.query("SELECT * FROM entries", (err, res) => {
+    sql.query("SELECT * FROM wp_woocommerce_entries", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -19,7 +19,7 @@ Entry.getAll = result => {
 };
 
 Entry.create = (newEntry, result) => {
-    sql.query("INSERT INTO entries SET ?", newEntry, (err, res) => {
+    sql.query("INSERT INTO wp_woocommerce_entries SET ?", newEntry, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
@@ -31,7 +31,7 @@ Entry.create = (newEntry, result) => {
 };
 
 Entry.findByOrderId = (orderId, result) => {
-    sql.query(`SELECT * FROM entries WHERE orderId = ${orderId}`, (err, res) => {
+    sql.query(`SELECT * FROM wp_woocommerce_entries WHERE orderId = ${orderId}`, (err, res) => {
       if (err) {
         console.log("error: ", err);
         result(err, null);
