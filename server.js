@@ -13,6 +13,6 @@ require("./routes/folder.routes.js")(app);
 require("./routes/wordpress.routes.js")(app);
 require("./routes/entries.routes.js")(app);
 // set port, listen for requests
-app.listen(5000, () => {
-  console.log("Server is running on port 5000.");
+app.listen(8443, () => {
+  console.log("Server is running on port 8443.");
 });
