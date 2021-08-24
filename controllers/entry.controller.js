@@ -53,3 +53,20 @@ exports.findOne = (req, res) => {
       } else res.send(data);
     });
   };
+
+exports.findByEventId = (req, res) => {
+  console.log("ok");
+  Entry.findByEventId(req.params.eventId, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found Entries with eventId ${req.params.eventId}.`
+        });
+      } else {
+        res.status(500).send({
+          message: "Error retrieving entries with eventId "+req.params.orderId
+        });
+      }
+    } else res.send(data);
+  }) 
+};

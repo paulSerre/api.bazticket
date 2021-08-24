@@ -1,4 +1,4 @@
-const Order = require("../models/wordpress.model.js");
+const Order = require("../models/order.model.js");
 
 exports.findAll = (_, res) => {
        Order.getAll((err, data) => {
