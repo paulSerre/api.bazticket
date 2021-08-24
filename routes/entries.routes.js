@@ -9,4 +9,8 @@ module.exports = app => {
 
     // Retrieve a all Entries with orderId
     app.get("/entries/:orderId", entry.findOne);
+
+
+    app.get("/entries/all/:eventId", entry.findByEventId);
+
 };

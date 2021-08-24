@@ -1,4 +1,4 @@
-const WooCommerce = require("./wordpress.js")
+const WooCommerce = require("./wordpressapi.js")
 
 // constructor
 const Order = function(orders) {
