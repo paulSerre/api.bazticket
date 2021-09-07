@@ -55,7 +55,6 @@ exports.findOne = (req, res) => {
   };
 
 exports.findByEventId = (req, res) => {
-  console.log("ok");
   Entry.findByEventId(req.params.eventId, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {

@@ -15,8 +15,9 @@ app.use(cors());
 app.use(express.json())
 
 
-require("./routes/wordpress.routes.js")(app);
+require("./routes/order.routes.js")(app);
 require("./routes/entries.routes.js")(app);
+require("./routes/product.routes.js")(app);
 
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);

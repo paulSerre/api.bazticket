@@ -8,7 +8,8 @@ Product.getAll = result => {
     sql.query("SELECT id, post_title \
                 FROM wp_posts \
                 WHERE post_type='product' \
-                ORDER BY post_modified DESC", (err, res) => {
+                ORDER BY post_modified DESC \
+                LIMIT 15", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
